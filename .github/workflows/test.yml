@@ -1,0 +1,12 @@
+name: Node.js Testing
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  Reusable:
+    uses: inkrend/.github/.github/workflows/reusable-test.yml@main

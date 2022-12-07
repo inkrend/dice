@@ -1,0 +1,15 @@
+root = true
+
+[*]
+charset = utf-8
+curly_bracket_next_line = false
+end_of_line = lf
+insert_final_newline = true
+quote_type = single
+spaces_around_brackets = inside
+spaces_around_operators = true
+trim_trailing_whitespace = true
+
+[*.{js, json, ts}]
+indent_style = tab
+indent_size = 4

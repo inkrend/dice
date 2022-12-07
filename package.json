@@ -1,0 +1,106 @@
+{
+	"name": "@inkrend/ts-template",
+	"version": "1.0.0",
+	"private": true,
+	"description": "A template repository for TypeScript projects.",
+	"keywords": [
+		"inkrend",
+		"template",
+		"typescript"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/inkrend/ts-template.git"
+	},
+	"homepage": "https://github.com/inkrend/ts-template#readme",
+	"bugs": {
+		"url": "https://github.com/inkrend/ts-template/issues"
+	},
+	"contributors": [
+		{
+			"name": "TuftedTail",
+			"url": "https://github.com/TuftedTail"
+		}
+	],
+	"license": "UNLICENSED",
+	"engines": {
+		"node": "^18.12.0"
+	},
+	"main": "dist/index.js",
+	"scripts": {
+		"build": "tsc --project tsconfig.build.json && tsc-alias -p tsconfig.build.json",
+		"clean": "rimraf coverage dist types",
+		"eslint": "eslint . --ext .ts",
+		"postinstall": "npm run build",
+		"test": "npm run eslint && c8 ava --verbose"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@types/sinon": "^10.0.13",
+		"@typescript-eslint/eslint-plugin": "^5.45.1",
+		"@typescript-eslint/parser": "^5.45.1",
+		"ava": "^5.1.0",
+		"c8": "^7.12.0",
+		"eslint": "^8.29.0",
+		"rimraf": "^3.0.2",
+		"sinon": "^15.0.0",
+		"ts-node": "^10.9.1",
+		"tsc-alias": "^1.8.2",
+		"tsconfig-paths": "^4.1.1",
+		"typescript": "^4.9.3"
+	},
+	"c8": {
+		"reporter": [
+			"html",
+			"lcov"
+		]
+	},
+	"ava": {
+		"extensions": [
+			"ts"
+		],
+		"require": [
+			"ts-node/register/transpile-only",
+			"tsconfig-paths/register"
+		]
+	},
+	"eslintConfig": {
+		"root": true,
+		"parser": "@typescript-eslint/parser",
+		"plugins": [
+			"@typescript-eslint"
+		],
+		"extends": [
+			"eslint:recommended",
+			"plugin:@typescript-eslint/eslint-recommended",
+			"plugin:@typescript-eslint/recommended"
+		],
+		"ignorePatterns": [
+			"dist",
+			"node_modules",
+			"test",
+			"types"
+		],
+		"rules": {
+			"indent": [
+				"error",
+				"tab"
+			],
+			"semi": [
+				"error",
+				"always"
+			],
+			"semi-style": [
+				"error",
+				"last"
+			],
+			"@typescript-eslint/quotes": [
+				"error",
+				"single",
+				{
+					"allowTemplateLiterals": true
+				}
+			]
+		}
+	}
+}

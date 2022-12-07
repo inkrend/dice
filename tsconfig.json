@@ -1,0 +1,47 @@
+{
+	"include": [
+		"src/**/*.ts",
+		"test/**/*.spec.ts"
+	],
+	"compilerOptions": {
+		"allowUnreachableCode": false,
+		"allowUnusedLabels": false,
+		"exactOptionalPropertyTypes": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitAny": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"noUncheckedIndexedAccess": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"strictBindCallApply": true,
+		"strictFunctionTypes": true,
+		"strictNullChecks": true,
+		"strictPropertyInitialization": true,
+		"useUnknownInCatchVariables": true,
+
+		"baseUrl": "./src",
+		"module": "CommonJS",
+		"target": "ES2022",
+		"moduleResolution": "NodeNext",
+		"paths": {
+			"@template/*": [ "./*" ]
+		},
+		"declaration": true,
+		"declarationDir": "./types/",
+		"newLine": "lf",
+		"outDir": "./dist/",
+		"removeComments": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"isolatedModules": true,
+		"skipLibCheck": true
+	},
+	"ts-node": {
+		"require": [
+			"tsconfig-paths/register"
+		]
+	}
+}
