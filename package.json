@@ -1,20 +1,19 @@
 {
-	"name": "@inkrend/ts-template",
+	"name": "@inkrend/dice",
 	"version": "1.0.0",
 	"private": true,
-	"description": "A template repository for TypeScript projects.",
+	"description": "A set of virtual game dice.",
 	"keywords": [
 		"inkrend",
-		"template",
 		"typescript"
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/inkrend/ts-template.git"
+		"url": "git+https://github.com/inkrend/dice.git"
 	},
-	"homepage": "https://github.com/inkrend/ts-template#readme",
+	"homepage": "https://github.com/inkrend/dice#readme",
 	"bugs": {
-		"url": "https://github.com/inkrend/ts-template/issues"
+		"url": "https://github.com/inkrend/dice/issues"
 	},
 	"contributors": [
 		{
@@ -30,12 +29,13 @@
 	"scripts": {
 		"build": "tsc --project tsconfig.build.json && tsc-alias -p tsconfig.build.json",
 		"clean": "rimraf coverage dist types",
-		"eslint": "eslint . --ext .ts",
+		"eslint": "eslint . --ext .ts --fix",
 		"postinstall": "npm run build",
 		"test": "npm run eslint && c8 ava --verbose"
 	},
-	"dependencies": {},
 	"devDependencies": {
+		"@stdlib/stats-chi2gof": "^0.0.8",
+		"@types/node": "^18.11.11",
 		"@types/sinon": "^10.0.13",
 		"@typescript-eslint/eslint-plugin": "^5.45.1",
 		"@typescript-eslint/parser": "^5.45.1",
@@ -62,7 +62,8 @@
 		"require": [
 			"ts-node/register/transpile-only",
 			"tsconfig-paths/register"
-		]
+		],
+		"timeout": "120s"
 	},
 	"eslintConfig": {
 		"root": true,

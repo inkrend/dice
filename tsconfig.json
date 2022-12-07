@@ -21,13 +21,14 @@
 		"strictNullChecks": true,
 		"strictPropertyInitialization": true,
 		"useUnknownInCatchVariables": true,
-
 		"baseUrl": "./src",
 		"module": "CommonJS",
 		"target": "ES2022",
 		"moduleResolution": "NodeNext",
 		"paths": {
-			"@template/*": [ "./*" ]
+			"@dice/*": [
+				"./*"
+			]
 		},
 		"declaration": true,
 		"declarationDir": "./types/",
